@@ -14,7 +14,7 @@ This project walks through a **complete supervised ML pipeline**:
 - Model evaluation using MAE, MSE, RMSE, and R² Score
 - Interactive Streamlit web app for real-time salary prediction
 
-The trained model achieves an **R² score of 98.76%** on the test set.
+The trained model achieves an **R² score of 98.70%** on the test set.
 
 ---
 
@@ -55,7 +55,7 @@ salary-predictor/
 | `Education_Level`   | int     | 0 = Bachelor, 1 = Master, 2 = PhD       |
 | `Hours_Per_Week`    | int     | Average weekly hours worked (35–60)     |
 | `Num_Projects`      | int     | Number of projects handled (1–15)       |
-| `Annual_Salary`     | float   | **Target** — Annual salary in USD       |
+| `Annual_Salary_INR` | float   | **Target** — Annual salary in INR (₹)   |
 
 ---
 
@@ -63,10 +63,10 @@ salary-predictor/
 
 | Metric | Value        |
 |--------|-------------|
-| MAE    | $2,235.11   |
-| MSE    | $9,236,637.98 |
-| RMSE   | $3,039.18   |
-| R²     | 0.9876 (98.76%) |
+| MAE    | ₹22,351     |
+| MSE    | ₹92,36,63,510 |
+| RMSE   | ₹30,392     |
+| R²     | 0.9870 (98.70%) |
 
 ---
 
@@ -106,16 +106,17 @@ The app will open at **http://localhost:8501** in your browser.
 - Hours Per Week: 45
 - Number of Projects: 7
 
-**Predicted Annual Salary: $98,450.00**
+**Predicted Annual Salary: ₹8,65,692**
 
 ---
 
-## 📸 App Screenshots
+## 📸 App UI
 
-> The app contains three tabs:
-> - **🔮 Predict Salary** — Enter employee details and get instant prediction
-> - **📈 Model Metrics** — View MAE, RMSE, R², and feature coefficients
-> - **🗂️ Dataset** — Browse the dataset and statistical summary
+> The app is simple and clean:
+> - Fill in 5 inputs (Experience, Age, Education, Hours, Projects)
+> - Click **Predict Salary**
+> - Instantly see **₹ Annual Salary** + Monthly & Weekly breakdown
+> - Expandable sections for Model Metrics and Dataset preview
 
 ---
 
@@ -124,6 +125,10 @@ The app will open at **http://localhost:8501** in your browser.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ---
+
+## 📄 License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ---
 
