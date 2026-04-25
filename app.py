@@ -45,7 +45,13 @@ if st.button("🔮 Predict Salary", use_container_width=True):
     col1.metric("Monthly Salary", f"₹{prediction/12:,.0f}")
     col2.metric("Weekly Salary",  f"₹{prediction/52:,.0f}")
 
-st.divider()
+
+# ── Model Metrics ────────────────────────────────────────────
+# ── Model Metrics ────────────────────────────────────────────
+with st.expander("📈 Model Metrics"):
+    st.write("**Test Set Evaluation (20% data)**")
+
+    st.divider()
 from sklearn.metrics import mean_absolute_percentage_error
 
 # Calculate MAPE
@@ -54,11 +60,6 @@ mape = mean_absolute_percentage_error(y_test, y_pred)
 # Convert to percentage
 mape_percentage = mape * 100
 print(f"MAPE: {mape_percentage:.2f}%")
-
-# ── Model Metrics ────────────────────────────────────────────
-# ── Model Metrics ────────────────────────────────────────────
-with st.expander("📈 Model Metrics"):
-    st.write("**Test Set Evaluation (20% data)**")
     
     # Updated to 5 columns to include MAPE
     col1, col2, col3, col4, col5 = st.columns(5)
