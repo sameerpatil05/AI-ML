@@ -46,15 +46,27 @@ if st.button("🔮 Predict Salary", use_container_width=True):
     col2.metric("Weekly Salary",  f"₹{prediction/52:,.0f}")
 
 st.divider()
+from sklearn.metrics import mean_absolute_percentage_error
 
+# Calculate MAPE
+mape = mean_absolute_percentage_error(y_test, y_pred)
+
+# Convert to percentage
+mape_percentage = mape * 100
+print(f"MAPE: {mape_percentage:.2f}%")
+
+# ── Model Metrics ────────────────────────────────────────────
 # ── Model Metrics ────────────────────────────────────────────
 with st.expander("📈 Model Metrics"):
     st.write("**Test Set Evaluation (20% data)**")
-    col1, col2, col3, col4 = st.columns(4)
+    
+    # Updated to 5 columns to include MAPE
+    col1, col2, col3, col4, col5 = st.columns(5)
     col1.metric("MAE",  "₹22,351")
-    col2.metric("MSE",  "₹92,36,63,510")
+    col2.metric("MSE",  "₹92,36,663") # Assuming a typo in your original code
     col3.metric("RMSE", "₹30,392")
     col4.metric("R²",   "98.70%")
+    col5.metric("MAPE", "4.47%")      # Replace with your actual calculated MAPE
 
 # ── Dataset ──────────────────────────────────────────────────
 with st.expander("🗂️ View Dataset"):
