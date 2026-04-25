@@ -52,14 +52,7 @@ with st.expander("📈 Model Metrics"):
     st.write("**Test Set Evaluation (20% data)**")
 
     st.divider()
-from sklearn.metrics import mean_absolute_percentage_error
 
-# Calculate MAPE
-mape = mean_absolute_percentage_error(y_test, y_pred)
-
-# Convert to percentage
-mape_percentage = mape * 100
-print(f"MAPE: {mape_percentage:.2f}%")
     
     # Updated to 5 columns to include MAPE
     col1, col2, col3, col4, col5 = st.columns(5)
